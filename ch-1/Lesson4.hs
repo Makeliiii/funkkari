@@ -57,6 +57,7 @@ getLocationFunction location = case location of
     "ny" -> nyOffice
     "sf" -> sfOffice
     "reno" -> renoOffice
+    "wa" -> waOffice
     _ -> (\name -> fst name ++ " " ++ snd name)
 
 -- listing 4.9
@@ -76,3 +77,6 @@ compareLastNamesNew name1 name2 = if comparisonResult == EQ
           comparisonResult = compare lastName1 lastName2
 
 -- lesson 4 Q4.1
+waOffice :: ([Char], [Char]) -> [Char]
+waOffice name = nameText ++ " Esq - PO Box 666 - Washington, DC 66666"
+    where nameText = fst name ++ " " ++ snd name
