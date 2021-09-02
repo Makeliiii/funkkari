@@ -63,3 +63,16 @@ getLocationFunction location = case location of
 addressLetterBetter :: ([Char], [Char]) -> [Char] -> [Char]
 addressLetterBetter name location = locationFunction name
     where locationFunction = getLocationFunction location
+
+-- lesson 4 Q4.1
+compareLastNamesNew :: (Ord a, Ord b) => (a, b) -> (a, b) -> Ordering
+compareLastNamesNew name1 name2 = if comparisonResult == EQ 
+                               then compare firstName1 firstName2
+                               else comparisonResult
+    where lastName1 = snd name1
+          lastName2 = snd name2
+          firstName1 = fst name1
+          firstName2 = fst name2
+          comparisonResult = compare lastName1 lastName2
+
+-- lesson 4 Q4.1
